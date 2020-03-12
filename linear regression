@@ -1,0 +1,34 @@
+w_gain <- read.csv("D:\\aa data science\\simple linear regression\\calories_consumed.csv")
+View(w_gain)
+
+# Exploratory data analysis
+summary(w_gain)
+
+#Scatter plot
+plot(w_gain$Calories.Consumed, w_gain$ Weight.gained..grams.)  # plot(X,Y)
+
+?plot
+
+attach(w_gain)
+
+
+#Correlation Coefficient (r)
+cor(Calories.Consumed,  Weight.gained..grams.)             # cor(X,Y)
+
+# Simple Linear Regression model
+reg <- lm( Weight.gained..grams. ~ Calories.Consumed) # lm(Y ~ X)
+
+summary(reg)
+
+pred <- predict(reg)
+
+reg$residuals
+sum(reg$residuals)
+
+mean(reg$residuals)
+sqrt(sum(reg$residuals^2)/nrow(w_gain))  #RMSE
+
+sqrt(mean(reg$residuals^2))
+
+confint(reg,level=0.95)
+predict(reg,interval="predict")
